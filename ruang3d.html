@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruang 3D — jelajahi motor gorden Somfy</title>
+<meta name="description" content="Masuk ke ruangan 3D, berjalan dengan WASD atau analog, lalu coba motor gorden Glydea ULTRA dan Movelite dengan berbagai kain.">
+<meta name="theme-color" content="#0f1d26">
+<link rel="stylesheet" href="css/style.css">
+</head><body data-nav="solid">
+<a class="skip" href="#isi">Langsung ke isi</a>
+<header class="nav is-solid" id="nav">
+  <a class="brand" href="index.html" aria-label="Somfy Indonesia — beranda">
+    <img class="brand__logo" src="assets/somfy-logo.svg" alt="" onerror="this.remove()">
+    <span class="brand__word">SOMFY</span><span class="brand__sub">Indonesia</span>
+  </a>
+  <nav class="nav__links" aria-label="Navigasi utama">
+    <a href="index.html">Beranda</a>
+    <a href="glydea.html">Glydea™ ULTRA</a>
+    <a href="movelite.html">Movelite™</a>
+    <a href="bandingkan.html">Bandingkan</a>
+    <a href="kontrol.html">Kontrol</a>
+    <a href="ruang3d.html" aria-current="page" class="is-active">Ruang 3D</a>
+  </nav>
+  <a class="btn btn--pill btn--gold nav__cta" href="#konsultasi">Konsultasi</a>
+  <button class="nav__burger" aria-label="Buka menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<main id="isi" class="r3page">
+<section class="r3wrap">
+  <div class="r3grid">
+    <div class="r3-view r3" id="r3-view">
+      <canvas id="r3" tabindex="0" aria-label="Ruangan 3D dengan jendela dan gorden bermotor. Gunakan W A S D untuk berjalan dan seret untuk melihat."></canvas>
+      <div class="hud" aria-hidden="true">
+        <div class="hud__cell"><span>Waktu</span><b><i id="r3-t">0,0</i> dtk</b></div>
+        <div class="hud__cell"><span>Kecepatan</span><b><i id="r3-v">0</i> cm/s</b></div>
+        <div class="hud__cell"><span>Suara</span><b><i id="r3-db">–</i> dB(A)</b><em class="eq"><u></u><u></u><u></u><u></u><u></u><u></u><u></u></em></div>
+      </div>
+      <div class="r3-tools">
+        <button class="r3-btn" id="r3-zout" type="button" aria-label="Perkecil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M8 11h6M20 20l-4.5-4.5"/></svg></button>
+        <span class="r3-zoomv" id="r3-zoomv">100%</span>
+        <button class="r3-btn" id="r3-zin" type="button" aria-label="Perbesar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M11 8v6M8 11h6M20 20l-4.5-4.5"/></svg></button>
+        <button class="r3-btn r3-btn--wide" id="r3-fs" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Layar penuh</span></button>
+      </div>
+      <p class="r3-chip" id="r3-chip"></p>
+      <div class="scene__status"><span id="r3-st">Terbuka</span><b id="r3-pct">0%</b></div>
+      <div class="r3-stick" id="r3-stick" aria-hidden="true"><i id="r3-knob"></i></div>
+      <div class="remote__body remote__body--row r3-remote"><span class="remote__led r3-led"></span>
+  <button class="rbtn" data-cmd="open" aria-label="Buka gorden"><svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button>
+  <button class="rbtn rbtn--my" data-cmd="my" aria-label="Stop atau posisi favorit">my</button>
+  <button class="rbtn" data-cmd="close" aria-label="Tutup gorden"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button></div>
+      <div class="r3-hint" id="r3-hint">
+        <p data-hint="desk" hidden><b>W A S D</b> untuk berjalan · <b>seret</b> untuk melihat · <b>scroll</b> untuk zoom · <b>Shift</b> berlari</p>
+        <p data-hint="touch" hidden><b>Analog kiri</b> untuk berjalan · <b>geser layar</b> untuk melihat sekeliling</p>
+      </div>
+      <div class="r3-load" id="r3-load">Memuat ruangan 3D…</div>
+    </div>
+
+    <aside class="r3-panel" data-lenis-prevent>
+      <nav class="crumbs" aria-label="Lokasi"><a href="index.html">Beranda</a><span>/</span><span>Ruang 3D</span></nav>
+      <h1 class="r3-title">Ruang 3D</h1>
+      <p class="r3-lead">Masuk ke ruangan, pilih motor dan kain, lalu tekan remote. Perubahan langsung terlihat di ruangan.</p>
+
+      <section class="r3-sec">
+        <h2>Pindah ke</h2>
+        <div class="r3-chips">
+          <button type="button" data-spot="pintu">Pintu masuk</button>
+          <button type="button" data-spot="jendela">Dekat jendela</button>
+          <button type="button" data-spot="motor">Lihat motor</button>
+        </div>
+      </section>
+
+      <section class="r3-sec">
+        <h2>Ruangan</h2>
+        <div class="r3-chips" role="radiogroup" aria-label="Ruangan">
+          <button type="button" role="radio" aria-checked="true" class="is-on" data-room="tamu">Ruang tamu</button>
+          <button type="button" role="radio" aria-checked="false" data-room="keluarga">Ruang keluarga</button>
+          <button type="button" role="radio" aria-checked="false" data-room="tidur">Kamar tidur</button>
+          <button type="button" role="radio" aria-checked="false" data-room="bayi">Kamar bayi</button>
+        </div>
+      </section>
+
+      <section class="r3-sec">
+        <h2>Remote</h2>
+        <div class="remote__body remote__body--row r3-remote--panel"><span class="remote__led r3-led"></span>
+  <button class="rbtn" data-cmd="open" aria-label="Buka gorden"><svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button>
+  <button class="rbtn rbtn--my" data-cmd="my" aria-label="Stop atau posisi favorit">my</button>
+  <button class="rbtn" data-cmd="close" aria-label="Tutup gorden"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button></div>
+        <p class="r3-note">Satu panel gorden (2 m) butuh <b id="r3-time">13,3</b> detik pada kecepatan ini.</p>
+        <div class="r3-chips r3-chips--sm" role="radiogroup" aria-label="Kecepatan animasi">
+          <button type="button" role="radio" aria-checked="true" class="is-on" data-x="1">Waktu nyata</button>
+          <button type="button" role="radio" aria-checked="false" data-x="4">Percepat 4×</button>
+        </div>
+      </section>
+
+      <section class="r3-sec">
+        <h2>Motor</h2>
+        <div class="r3-current"><b id="r3-mname"></b><span id="r3-mmeta"></span><a id="r3-mlink" class="link-arrow" href="#">Spesifikasi lengkap</a></div>
+        <div class="r3-sub" id="r3-speed-sec">
+          <h3>Kecepatan Glydea™</h3>
+          <div class="r3-speeds" id="r3-speeds" role="radiogroup" aria-label="Kecepatan"></div>
+        </div>
+        <div class="r3-motors" id="r3-motors" role="radiogroup" aria-label="Pilih motor"></div>
+      </section>
+
+      <section class="r3-sec">
+        <h2>Jenis kain</h2>
+        <div class="r3-fabrics" role="radiogroup" aria-label="Jenis kain">
+          <button type="button" role="radio" aria-checked="false" data-fabric="vitrase"><i style="background:#f3ead8;opacity:.6"></i><span><b>Vitrase</b><small>Tipis, cahaya tetap masuk</small></span></button>
+          <button type="button" role="radio" aria-checked="true" class="is-on" data-fabric="dimout"><i style="background:#d9cbb2"></i><span><b>Dimout</b><small>Meredupkan ruangan</small></span></button>
+          <button type="button" role="radio" aria-checked="false" data-fabric="blackout"><i style="background:#6f6458"></i><span><b>Blackout</b><small>Hampir gelap total</small></span></button>
+        </div>
+        <p class="r3-note">Jenis kain hanya ilustrasi tampilan. Pilih motor sesuai berat kain Anda di <a href="bandingkan.html#cari">Cari motor</a>.</p>
+      </section>
+
+      <section class="r3-sec">
+        <h2>Lainnya</h2>
+        <p class="r3-note">Perabot dibuat dengan Meshy. Motor dan angka kecepatan/suara dari katalog Somfy R01. Ingin versi ringan? <a href="game.html">Main versi 2D</a>.</p>
+      </section>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__brand"><span class="brand__word">SOMFY</span><span class="brand__sub">Indonesia</span></p>
+      <p class="foot__note">Prototipe website. Data produk dari Somfy Window Fashion Product Catalogue R01 dan Movelite™ Spec Brochure. Glydea™, Movelite™, RTS, Situo, Smoove, Telis, dan Inis adalah merek Somfy.</p>
+    </div>
+    <nav class="foot__nav" aria-label="Produk">
+      <h3>Motor gorden</h3>
+      <a href="glydea.html">Glydea™ ULTRA</a><a href="movelite.html">Movelite™</a><a href="bandingkan.html">Bandingkan & cari motor</a>
+    </nav>
+    <nav class="foot__nav" aria-label="Kontrol">
+      <h3>Kontrol</h3>
+      <a href="kontrol.html#teknologi">WT · RTS · DCT</a><a href="kontrol.html#remote">Remote & saklar</a><a href="produk-glydea-ultra-rs485-module.html">Modul RS485</a>
+    </nav>
+  </div>
+</footer>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/vendor/model-viewer.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/vendor/three/three.min.js"></script>
+<script src="js/vendor/three/GLTFLoader.js"></script>
+<script src="js/vendor/three/OrbitControls.js"></script>
+<script src="js/vendor/three/RoomEnvironment.js"></script>
+<script src="js/ruang3d.js"></script>
+</body>
+</html>

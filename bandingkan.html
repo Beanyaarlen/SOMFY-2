@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bandingkan &amp; cari motor gorden — Somfy Indonesia</title>
+<meta name="description" content="Cari motor gorden Somfy yang sesuai berat gorden dan panjang track, lalu bandingkan semua varian Glydea ULTRA dan Movelite.">
+<meta name="theme-color" content="#0f1d26">
+<link rel="stylesheet" href="css/style.css">
+</head><body data-nav="solid">
+<a class="skip" href="#isi">Langsung ke isi</a>
+<header class="nav is-solid" id="nav">
+  <a class="brand" href="index.html" aria-label="Somfy Indonesia — beranda">
+    <img class="brand__logo" src="assets/somfy-logo.svg" alt="" onerror="this.remove()">
+    <span class="brand__word">SOMFY</span><span class="brand__sub">Indonesia</span>
+  </a>
+  <nav class="nav__links" aria-label="Navigasi utama">
+    <a href="index.html">Beranda</a>
+    <a href="glydea.html">Glydea™ ULTRA</a>
+    <a href="movelite.html">Movelite™</a>
+    <a href="bandingkan.html" aria-current="page" class="is-active">Bandingkan</a>
+    <a href="kontrol.html">Kontrol</a>
+    <a href="ruang3d.html">Ruang 3D</a>
+  </nav>
+  <a class="btn btn--pill btn--gold nav__cta" href="#konsultasi">Konsultasi</a>
+  <button class="nav__burger" aria-label="Buka menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<main id="isi">
+<section class="phead">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Lokasi"><a href="index.html">Beranda</a><span>/</span><span>Bandingkan</span></nav>
+    <p class="eyebrow eyebrow--dark">Bandingkan & cari</p>
+    <h1 class="title title--xl">Motor mana<br>untuk jendela Anda?</h1>
+  </div>
+</section>
+
+<section class="finder" id="cari">
+  <div class="wrap finder__grid">
+    <form class="finder__form reveal" id="finder" onsubmit="return false">
+      <h2 class="dsec__title">Cari motor yang pas</h2>
+      <div class="calc">
+        <p class="opt__label">1 · Berat gorden</p>
+        <div class="seg seg--light seg--sm" role="radiogroup" aria-label="Cara mengisi berat">
+          <button type="button" class="seg__btn is-on" data-wmode="direct" role="radio" aria-checked="true">Saya tahu beratnya</button>
+          <button type="button" class="seg__btn" data-wmode="calc" role="radio" aria-checked="false">Hitung dari kain</button>
+        </div>
+        <label class="field" data-show="direct"><span>Berat gorden (kg)</span><input type="number" id="f-kg" min="1" max="120" step="0.5" value="20" inputmode="decimal"></label>
+        <div class="calc__grid" data-show="calc" hidden>
+          <label class="field"><span>Berat kain (g/m²)</span><input type="number" id="c-gsm" min="50" max="1500" step="10" value="300" inputmode="numeric"></label>
+          <label class="field"><span>Lebar area tertutup (m)</span><input type="number" id="c-w" min="0.5" max="20" step="0.1" value="4" inputmode="decimal"></label>
+          <label class="field"><span>Tinggi gorden (m)</span><input type="number" id="c-h" min="0.5" max="10" step="0.1" value="2.8" inputmode="decimal"></label>
+          <label class="field"><span>Rasio kerutan (fullness)</span><input type="number" id="c-f" min="1" max="3.5" step="0.1" value="2" inputmode="decimal"></label>
+          <p class="calc__out">Perkiraan berat: <b id="c-out">6,7 kg</b></p>
+          <p class="fine">Rumus katalog Somfy: berat kain/m² × luas area tertutup × rasio kerutan.</p>
+        </div>
+      </div>
+      <label class="field"><span>2 · Panjang track lurus (m)</span><input type="number" id="f-track" min="0.5" max="15" step="0.1" value="4" inputmode="decimal"></label>
+      <div>
+        <p class="opt__label">3 · Sumber daya</p>
+        <div class="seg seg--light seg--sm" role="radiogroup" aria-label="Sumber daya">
+          <button type="button" class="seg__btn is-on" data-power="any" role="radio" aria-checked="true">Bebas</button>
+          <button type="button" class="seg__btn" data-power="ac" role="radio" aria-checked="false">Listrik PLN</button>
+          <button type="button" class="seg__btn" data-power="batt" role="radio" aria-checked="false">Baterai</button>
+        </div>
+      </div>
+      <div>
+        <p class="opt__label">4 · Cara kontrol</p>
+        <div class="seg seg--light seg--sm" role="radiogroup" aria-label="Kontrol">
+          <button type="button" class="seg__btn is-on" data-ctrl="any" role="radio" aria-checked="true">Bebas</button>
+          <button type="button" class="seg__btn" data-ctrl="WT" role="radio" aria-checked="false">Saklar (WT)</button>
+          <button type="button" class="seg__btn" data-ctrl="RTS" role="radio" aria-checked="false">Remote (RTS)</button>
+          <button type="button" class="seg__btn" data-ctrl="DCT" role="radio" aria-checked="false">Sistem gedung (DCT)</button>
+        </div>
+      </div>
+      <p class="fine">Hanya untuk track lurus satu arah atau bukaan tengah. Untuk track lengkung atau bengkok, kapasitas turun sesuai tabel seleksi katalog; konsultasikan dengan kami.</p>
+    </form>
+    <div class="finder__res" aria-live="polite">
+      <p class="finder__sum" id="f-sum"></p>
+      <div class="results" id="f-res"></div>
+    </div>
+  </div>
+</section>
+
+<section class="compare" id="tabel">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow eyebrow--dark">Semua varian</p>
+      <h2 class="title">Tabel perbandingan.</h2>
+      <div class="seg seg--light" role="radiogroup" aria-label="Saring seri">
+        <button class="seg__btn is-on" data-tfam="all" role="radio" aria-checked="true">Semua (10)</button>
+        <button class="seg__btn" data-tfam="glydea" role="radio" aria-checked="false">Glydea™ ULTRA (6)</button>
+        <button class="seg__btn" data-tfam="movelite" role="radio" aria-checked="false">Movelite™ (4)</button>
+      </div>
+    </header>
+    <div class="table-wrap reveal"><table class="tbl tbl--wide" id="tbl"><thead><tr><th scope="col" class="corner">Spesifikasi</th><th scope="col" data-fam="glydea"><a href="produk-glydea-ultra-35e-wt.html">Glydea™ ULTRA 35e WT</a></th><th scope="col" data-fam="glydea"><a href="produk-glydea-ultra-35e-dct.html">Glydea™ ULTRA 35e DCT</a></th><th scope="col" data-fam="glydea"><a href="produk-glydea-ultra-35e-rts.html">Glydea™ ULTRA 35e RTS</a></th><th scope="col" data-fam="glydea"><a href="produk-glydea-ultra-60e-wt.html">Glydea™ ULTRA 60e WT</a></th><th scope="col" data-fam="glydea"><a href="produk-glydea-ultra-60e-dct.html">Glydea™ ULTRA 60e DCT</a></th><th scope="col" data-fam="glydea"><a href="produk-glydea-ultra-60e-rts.html">Glydea™ ULTRA 60e RTS</a></th><th scope="col" data-fam="movelite"><a href="produk-movelite-35-wt.html">Movelite™ 35 WT</a></th><th scope="col" data-fam="movelite"><a href="produk-movelite-35-dct.html">Movelite™ 35 DCT</a></th><th scope="col" data-fam="movelite"><a href="produk-movelite-35-rts.html">Movelite™ 35 RTS</a></th><th scope="col" data-fam="movelite"><a href="produk-movelite-wirefree-35-rts.html">Movelite™ Wirefree 35 RTS</a></th></tr></thead><tbody><tr><th scope="row">Berat gorden maks.</th><td data-fam="glydea" class="">35 kg</td><td data-fam="glydea" class="">35 kg</td><td data-fam="glydea" class="">35 kg</td><td data-fam="glydea" class="">60 kg</td><td data-fam="glydea" class="">60 kg</td><td data-fam="glydea" class="">60 kg</td><td data-fam="movelite" class="">35 kg</td><td data-fam="movelite" class="">35 kg</td><td data-fam="movelite" class="">35 kg</td><td data-fam="movelite" class="">35 kg</td></tr><tr><th scope="row">Track lurus maks.</th><td data-fam="glydea" class="">10 m</td><td data-fam="glydea" class="">10 m</td><td data-fam="glydea" class="">10 m</td><td data-fam="glydea" class="">12 m</td><td data-fam="glydea" class="">12 m</td><td data-fam="glydea" class="">12 m</td><td data-fam="movelite" class="">10 m</td><td data-fam="movelite" class="">10 m</td><td data-fam="movelite" class="">10 m</td><td data-fam="movelite" class="">6 m</td></tr><tr><th scope="row">Torsi nominal</th><td data-fam="glydea" class="">0,6 Nm</td><td data-fam="glydea" class="">0,6 Nm</td><td data-fam="glydea" class="">0,6 Nm</td><td data-fam="glydea" class="">1,0 Nm</td><td data-fam="glydea" class="">1,0 Nm</td><td data-fam="glydea" class="">1,0 Nm</td><td data-fam="movelite" class="">0,6 Nm</td><td data-fam="movelite" class="">0,6 Nm</td><td data-fam="movelite" class="">0,6 Nm</td><td data-fam="movelite" class="">0,6 Nm</td></tr><tr><th scope="row">Kecepatan</th><td data-fam="glydea" class="">7,5–20 cm/s (5 level)</td><td data-fam="glydea" class="">7,5–20 cm/s (5 level)</td><td data-fam="glydea" class="">7,5–20 cm/s (5 level)</td><td data-fam="glydea" class="">7,5–20 cm/s (5 level)</td><td data-fam="glydea" class="">7,5–20 cm/s (5 level)</td><td data-fam="glydea" class="">7,5–20 cm/s (5 level)</td><td data-fam="movelite" class="">15 cm/s</td><td data-fam="movelite" class="">15 cm/s</td><td data-fam="movelite" class="">15 cm/s</td><td data-fam="movelite" class="">15 cm/s</td></tr><tr><th scope="row">Suara terendah</th><td data-fam="glydea" class="">29,8 dB(A)</td><td data-fam="glydea" class="">29,8 dB(A)</td><td data-fam="glydea" class="">29,8 dB(A)</td><td data-fam="glydea" class="">29,8 dB(A)</td><td data-fam="glydea" class="">29,8 dB(A)</td><td data-fam="glydea" class="">29,8 dB(A)</td><td data-fam="movelite" class="">40,6 dB(A)</td><td data-fam="movelite" class="">40,6 dB(A)</td><td data-fam="movelite" class="">40,6 dB(A)</td><td data-fam="movelite" class="">41 dB(A)</td></tr><tr><th scope="row">Daya</th><td data-fam="glydea" class="">90–255 Vac</td><td data-fam="glydea" class="">90–255 Vac</td><td data-fam="glydea" class="">90–255 Vac</td><td data-fam="glydea" class="">90–255 Vac</td><td data-fam="glydea" class="">90–255 Vac</td><td data-fam="glydea" class="">90–255 Vac</td><td data-fam="movelite" class="">90–264 Vac</td><td data-fam="movelite" class="">90–264 Vac</td><td data-fam="movelite" class="">90–264 Vac</td><td data-fam="movelite" class="">Baterai Li-ion (isi via USB 5 Vdc)</td></tr><tr><th scope="row">Kontrol</th><td data-fam="glydea" class="">Saklar AC (WT)</td><td data-fam="glydea" class="">Dry contact (DCT)</td><td data-fam="glydea" class="">Radio RTS</td><td data-fam="glydea" class="">Saklar AC (WT)</td><td data-fam="glydea" class="">Dry contact (DCT)</td><td data-fam="glydea" class="">Radio RTS</td><td data-fam="movelite" class="">Saklar AC (WT)</td><td data-fam="movelite" class="">Dry contact (DCT)</td><td data-fam="movelite" class="">Radio RTS</td><td data-fam="movelite" class="">Radio RTS</td></tr><tr><th scope="row">Touch Motion</th><td data-fam="glydea" class="n">—</td><td data-fam="glydea" class="">Ya</td><td data-fam="glydea" class="">Ya</td><td data-fam="glydea" class="n">—</td><td data-fam="glydea" class="">Ya</td><td data-fam="glydea" class="">Ya</td><td data-fam="movelite" class="n">—</td><td data-fam="movelite" class="">Ya</td><td data-fam="movelite" class="">Ya</td><td data-fam="movelite" class="">Ya</td></tr><tr><th scope="row">Soft start/stop</th><td data-fam="glydea" class="n">—</td><td data-fam="glydea" class="">Ya</td><td data-fam="glydea" class="">Ya</td><td data-fam="glydea" class="n">—</td><td data-fam="glydea" class="">Ya</td><td data-fam="glydea" class="">Ya</td><td data-fam="movelite" class="n">—</td><td data-fam="movelite" class="n">—</td><td data-fam="movelite" class="n">—</td><td data-fam="movelite" class="">Ya (brosur)</td></tr><tr><th scope="row">Warna</th><td data-fam="glydea" class="">Gold, Silver</td><td data-fam="glydea" class="">Gold, Silver</td><td data-fam="glydea" class="">Gold, Silver</td><td data-fam="glydea" class="">Gold, Silver</td><td data-fam="glydea" class="">Gold, Silver</td><td data-fam="glydea" class="">Gold, Silver</td><td data-fam="movelite" class="">White, Grey</td><td data-fam="movelite" class="">White, Grey</td><td data-fam="movelite" class="">White, Grey</td><td data-fam="movelite" class="">White</td></tr></tbody></table></div>
+    <p class="fine reveal">Sumber: Somfy Window Fashion Product Catalogue R01 dan Movelite™ Spec Brochure. “—” berarti fitur tidak tercantum di dokumen. Suara Movelite™ kabel: katalog 40,6 dB(A), brosur 41 dBA.</p>
+  </div>
+</section>
+
+<section class="cta" id="konsultasi">
+  <div class="cta__bg" aria-hidden="true">
+    <img src="assets/img/rumah-fasad-2400.webp" srcset="assets/img/rumah-fasad-1280.webp 1280w, assets/img/rumah-fasad-2400.webp 2400w" sizes="100vw" alt="" loading="lazy">
+  </div>
+  <div class="wrap cta__inner reveal">
+    <p class="eyebrow">Mulai dari jendela Anda</p>
+    <h2 class="display display--sm">Konsultasikan<br>kebutuhan gorden Anda.</h2>
+    <p class="lead">Ukuran jendela, berat kain, dan cara kontrol. Kami bantu pilih motor yang tepat.</p>
+    <div class="cta__btns">
+      <a class="btn btn--pill btn--gold" href="#konsultasi" data-todo="kontak">Hubungi kami</a>
+      <a class="btn btn--pill btn--ghost" href="bandingkan.html#cari">Cari motor yang pas</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__brand"><span class="brand__word">SOMFY</span><span class="brand__sub">Indonesia</span></p>
+      <p class="foot__note">Prototipe website. Data produk dari Somfy Window Fashion Product Catalogue R01 dan Movelite™ Spec Brochure. Glydea™, Movelite™, RTS, Situo, Smoove, Telis, dan Inis adalah merek Somfy.</p>
+    </div>
+    <nav class="foot__nav" aria-label="Produk">
+      <h3>Motor gorden</h3>
+      <a href="glydea.html">Glydea™ ULTRA</a><a href="movelite.html">Movelite™</a><a href="bandingkan.html">Bandingkan & cari motor</a>
+    </nav>
+    <nav class="foot__nav" aria-label="Kontrol">
+      <h3>Kontrol</h3>
+      <a href="kontrol.html#teknologi">WT · RTS · DCT</a><a href="kontrol.html#remote">Remote & saklar</a><a href="produk-glydea-ultra-rs485-module.html">Modul RS485</a>
+    </nav>
+  </div>
+</footer>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/vendor/model-viewer.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/finder.js"></script>
+</body>
+</html>

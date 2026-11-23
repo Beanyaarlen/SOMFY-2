@@ -1,0 +1,23 @@
+PROMPT UNTUK GEMINI (opsional, untuk memperkaya visual)
+======================================================
+Lampirkan foto "Gambar rumah 1 bagian pintu terbuka.jpg" sebagai acuan setiap prompt,
+supaya sudut kamera dan suasananya tetap sama.
+
+1) Gorden tertutup (untuk adegan malam / privasi)
+"Edit foto ini. Kamera, perabot, dan pencahayaan TETAP sama persis. Hanya ubah gorden
+di jendela kaca besar ruang keluarga menjadi tertutup penuh: gorden sheer putih gading,
+lipatan ripplefold rapi, menutup dari kiri ke kanan. Cahaya dalam ruangan hangat 2700K,
+tembus lembut ke luar. Fotorealistis, resolusi tinggi, rasio 16:9."
+
+2) Close-up motor terpasang (untuk bagian produk)
+"Foto close-up interior: motor gorden putih ramping vertikal terpasang di ujung rel
+aluminium putih di langit-langit, gorden sheer putih menggantung. Latar ruang keluarga
+hangat bergaya tropis modern (kayu, batu alam, lampu downlight). Depth of field dangkal,
+fotorealistis, 16:9, tanpa logo dan tanpa teks."
+
+3) Kamar tidur pagi hari (untuk bagian Movelite)
+"Kamar tidur modern tropis pagi hari, cahaya matahari masuk lewat jendela besar,
+gorden blackout hijau tua setengah terbuka, gorden sheer putih di depannya.
+Fotorealistis, 16:9, tanpa orang, tanpa logo, tanpa teks."
+
+Simpan hasilnya ke asset konten\SOMFLY, lalu kabari Claude untuk dipasang.

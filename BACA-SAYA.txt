@@ -1,0 +1,36 @@
+WEBSITE SOMFY — GLYDEA™ ULTRA & MOVELITE™ (v3, multi-halaman)
+=============================================================
+
+Cara membuka
+- Klik dua kali index.html. Tidak perlu internet atau server.
+
+Halaman
+- index.html          Beranda: pembuka "masuk ke rumah", 2 seri, demo remote + gorden, jalan pintas
+- glydea.html         Seri Glydea™ ULTRA: konfigurator (35e/60e × WT/DCT/RTS), 5 kecepatan, 7 produk
+- movelite.html       Seri Movelite™: konfigurator (WT/DCT/RTS/Wirefree), info baterai, 4 produk
+- produk-*.html       11 halaman detail: model 3D, fitur, spesifikasi lengkap, pengkabelan, remote yang cocok
+- bandingkan.html     Cari motor (berat gorden + panjang track, ada kalkulator berat kain) + tabel 10 motor
+- kontrol.html        WT/RTS/DCT, 7 remote & saklar dengan model 3D, tabel kecocokan
+- game.html           Game 2D "Misi Gorden": 4 misi berbasis data katalog, skor bintang (disimpan di browser)
+- ruang3d.html        Ruang 3D: jelajahi ruangan (WASD / analog di HP), layar penuh, zoom; panel kanan untuk ruangan, motor, kecepatan, kain
+- game3d.html         (lama) otomatis dialihkan ke ruang3d.html
+
+Folder
+- css/style.css       semua tampilan (warna di :root paling atas)
+- js/data.js          data produk (dibuat otomatis dari _sumber/data.py)
+- js/common.js        menu, scroll halus, animasi muncul, pemuat model 3D
+- js/home.js, family.js, finder.js, kontrol.js, game.js : fitur per halaman
+- assets/models/      18 model 3D Meshy (dioptimalkan, dibungkus .js agar bisa dibuka tanpa server)
+- assets/thumbs/      gambar kecil model untuk kartu produk
+- _sumber/            generator halaman (python3 build.py <folder>) — ubah data di data.py lalu jalankan ulang
+
+Yang masih perlu diisi
+- Logo: taruh file resmi di assets/somfy-logo.svg, otomatis menggantikan tulisan "SOMFY".
+- Tombol "Hubungi kami": belum ada nomor/alamat kontak.
+- Font: Figtree dipakai sebagai pengganti font resmi Somfy.
+- Movelite™ 60 disebut di brosur, tetapi tidak ada di katalog R01 dan belum punya model 3D.
+
+Sumber data
+- Somfy Window Fashion Product Catalogue R01 (hal. 112–135, 146–166)
+- Movelite™ Spec Brochure
+- Selisih antar-dokumen ditulis di bagian "Catatan data" tiap halaman produk.
